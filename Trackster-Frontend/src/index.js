@@ -4,8 +4,23 @@ formEl.addEventListener("submit", e => {
   searchResult(e.target.elements.name.value);
 });
 
-const renderResults = fetchedResults =>  fetchedResults.forEach(result) 
+const renderResults = fetchedResults => fetchedResults.forEach(result);
 
+//search bar
+let searchShow = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchToggle = document.getElementById("searchToggle");
+  const searchDiv = document.getElementById("searchDiv");
+  searchToggle.addEventListener("click", () => {
+    searchShow = !searchShow;
+    if (searchShow) {
+      searchDiv.className = "searchShow";
+    } else {
+      searchDiv.className = "searchHidden";
+    }
+  });
+});
 const searchResult = value => {
   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`, {
     method: "GET",
@@ -21,4 +36,19 @@ const searchResult = value => {
     .catch(err => {
       console.log(err);
     });
+};
+
+//login form
+const loginForm = document.getElementById("login");
+loginForm.addEventListener("submit", e => {
+  e.preventDefault();
+  getUsername(e.target.elements.username.value);
+});
+
+const getUsername = username => {
+  fetch(`http://localhost:3000/users/`, {
+    method: "GET"
+  })
+    .then(resp => resp.json())
+    .then(data => console.log(data));
 };

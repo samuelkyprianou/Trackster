@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles/index.css" />
+
     <script type="text/javascript" src="./src/index.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div id="searchDiv" class="searchHidden">
       <form class="search">
         <h3>Search Track</h3>
 
@@ -21,6 +23,27 @@
 
         <br />
         <input type="submit" name="submit" value="Search" class="submit" />
+      </form>
+    </div>
+
+    <div class="searchToggler">
+      <button id="searchToggle">Search</button>
+    </div>
+
+    <div class="login">
+      <form id="login">
+        <h3>Login</h3>
+
+        <input
+          type="text"
+          name="username"
+          value=""
+          placeholder="Enter your username"
+          class="input-text"
+        />
+
+        <br />
+        <input type="submit" name="login" value="Login" class="submit" />
       </form>
     </div>
   </body>
