@@ -22,10 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".collapsible");
-  var instances = M.Collapsible.init(elems);
+  var instances = M.Collapsible.init(elems, {
+    outDuration: 0
+  });
 });
 
 const createModal = () => {
@@ -42,7 +43,6 @@ const addEffects = () => {
 };
 document.addEventListener("DOMContentLoaded", () => {
   addEffects();
-
 });
 
 //handle results
@@ -137,6 +137,32 @@ const searchResult = value => {
     });
 };
 
+//create playlist
+
+const createPlaylistForm = document.getElementById("createplaylist");
+createPlaylistForm.addEventListener("submit", e => {
+  e.preventDefault();
+  postPlaylist({
+    name: e.target.elements.name.value,
+    user_id: currentUser.data.id
+  }).then(() => e.target.reset());
+});
+
+const postPlaylist = playlistObj => {
+  return fetch("http://localhost:3000/playlists", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(playlistObj)
+  })
+    .then(res => res.json())
+    .then(playlist => {
+      showPlaylist(playlist);
+    });
+};
+
 // login form
 const loginForm = document.getElementById("login");
 loginForm.addEventListener("submit", e => {
@@ -149,7 +175,6 @@ loginForm.addEventListener("submit", e => {
     }
   });
 });
-
 
 const iteratePlaylists = user =>
   user.data.playlist.forEach(playlist => showPlaylist(playlist));
@@ -223,7 +248,6 @@ const renderTrackInfo = (track, trackBodyEl) => {
   );
   addEffects();
 };
-
 
 const getUsername = username => {
   return fetch(`http://localhost:3000/users/${username}`, {

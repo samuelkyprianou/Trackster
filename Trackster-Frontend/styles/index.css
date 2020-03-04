@@ -22,9 +22,3 @@ audio {
   display: flex;
   float: left;
 }
-
-#playlistCollapse {
-  width: 40%;
-  text-align: center;
-  float: left;
-}

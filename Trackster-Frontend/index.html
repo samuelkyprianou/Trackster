@@ -9,12 +9,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-
     />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-
     />
 
     <!-- Compiled and minified JavaScript -->
@@ -37,7 +35,26 @@
       href="#modal1"
       ><i class="material-icons">add</i></a
     > -->
-    <div id="searchDiv" class="searchHidden">
+
+    <nav>
+      <div class="nav-wrapper #1a237e indigo darken-4">
+        <form class="search">
+          <div class="input-field">
+            <input
+            id="search"
+            type="search"
+            name="name"
+            value=""
+            placeholder="Enter artist/album/track name"
+          />
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+            
+          </div>
+        </form>
+      </div>
+    </nav>
+    <!-- <div id="searchDiv" class="searchHidden">
       <form class="search">
         <h3>Search Track</h3>
 
@@ -52,24 +69,21 @@
         <br />
         <input type="submit" name="submit" value="Search" class="submit" />
       </form>
-    </div>
-
+    </div> -->
+<!-- 
     <div class="searchToggler">
       <button id="searchToggle">Search</button>
-    </div>
-    <a
-      class="btn-floating btn-medium waves-effect waves-light red modal-trigger"
-      ><i class="material-icons">add</i></a
-    >
+    </div> -->
+    
     <div class="login">
       <form id="login">
         <h3>Login</h3>
         <input
-          type="text"
-          name="username"
-          value=""
-          placeholder="Enter your username"
-          class="input-text"
+        type="text"
+        name="username"
+        value=""
+        placeholder="Enter your username"
+        class="input-text"
         />
         <br />
         <input type="submit" name="login" value="Login" class="submit" />
@@ -78,15 +92,38 @@
     <div class="resultsCollapse" id="resultsCollapse">
       <ul class="collapsible" id="resultsAccordion"></ul>
     </div>
+    <a
+      class="waves-effect waves-circle waves-light btn-floating modal-trigger red"
+      href="#modal1"
+      ><i class="material-icons">add</i></a
+    >
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <form id="createplaylist">
+          <h3>Create Playlist</h3>
+
+          <input
+            type="text"
+            name="name"
+            value=""
+            placeholder="Enter Playlist Name"
+            class="input-text"
+          />
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" name="login" value="Login" class="modal-close waves-effect green btn-flat">submit</button>
+        </form>
+      </div>
+    </div>
 
     <div class="results"></div>
-    <ul class="collapsible" id="playlistCollapse"></ul>
+    <ul class="collapsible" id="playlistCollapse">Playlists</ul>
     <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
       defer
     ></script>
-
   </body>
 </html>
