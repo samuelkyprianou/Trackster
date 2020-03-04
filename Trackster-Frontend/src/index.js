@@ -1,5 +1,4 @@
 let currentUser = null;
-let playlistCollapseEl = document.getElementById("playlistCollapse");
 
 const formEl = document.querySelector("form");
 formEl.addEventListener("submit", e => {
@@ -23,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const addEffects = () => {
+  const elems = document.querySelectorAll(".collapsible");
+  const instances = M.Collapsible.init(elems);
+};
+document.addEventListener("DOMContentLoaded", () => {
+  addEffects();
+});
 
 //handle results
 const renderResults = fetchedResults => {
@@ -92,8 +98,6 @@ const renderResult = (result, resultsList) => {
 
 //search
 
-
-
 const searchResult = value => {
   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`, {
     method: "GET",
@@ -126,56 +130,41 @@ loginForm.addEventListener("submit", e => {
 
 const iteratePlaylists = user =>
   user.data.playlist.forEach(playlist => showPlaylist(playlist));
+let playlistCollapseEl = document.getElementById("playlistCollapse");
+// let trackCollapseEl = document.getElementById("trackCollapse");
 
 const showPlaylist = playlist => {
-  playlistCollapseEl.innerText = "";
-  let cardEl = document.createElement("div");
-  cardEl.className = "card";
-  let cardHeaderEl = document.createElement("div");
-  cardHeaderEl.className = "card-header";
-  cardHeaderEl.setAttribute("id", playlist.id);
-  let h2El = document.createElement("h2");
-  h2El.className = "mb-0";
-  let buttonEl = document.createElement("button");
-  buttonEl.className = "btn btn-link";
-  buttonEl.type = "button";
-  buttonEl.setAttribute("data-toggle", "collapse");
-  buttonEl.setAttribute("data-target", `#${playlist.name}`);
-  buttonEl.setAttribute("aria-expanded", "false");
-  buttonEl.setAttribute("aria-controls", playlist.name);
-  buttonEl.innerText = playlist.name;
-  let trackDivEl = document.createElement("div");
-  trackDivEl.setAttribute("id", playlist.name);
-  trackDivEl.className = "collapse";
-  trackDivEl.setAttribute("aria-labelledby", playlist.name);
-  trackDivEl.setAttribute("data-parent", "#playlistCollapse");
-  let trackCardEl = document.createElement("div");
-  trackCardEl.className = "card-body";
-  playlistCollapseEl.append(cardEl);
-  cardEl.append(cardHeaderEl, trackDivEl);
-  cardHeaderEl.append(h2El);
-  h2El.append(buttonEl);
-  trackDivEl.append(trackCardEl);
-  let trackCardDivEl = document.createElement("div");
-  trackCardDivEl.className = "list-group";
-  trackCardEl.append(trackCardDivEl);
-  playlist.tracks.forEach(track => createTracks(track, trackCardDivEl));
+  let trackCollapseEl = document.createElement("ul");
+  let playlistEl = document.createElement("li");
+  let playlistHeaderEl = document.createElement("div");
+  playlistHeaderEl.className = "collapsible-header";
+  playlistHeaderEl.innerText = playlist.name;
+  let playlistIconEl = document.createElement("i");
+  playlistIconEl.className = "material-icons";
+  let playlistBodyEl = document.createElement("div");
+  playlistBodyEl.className = "collapsible-body";
+  playlistCollapseEl.append(playlistEl);
+  playlistEl.append(playlistHeaderEl, playlistBodyEl);
+  playlistHeaderEl.append(playlistIconEl);
+  playlistBodyEl.append(trackCollapseEl);
+  playlist.tracks.forEach(track => createTracks(track, trackCollapseEl));
 };
 
-const createTracks = (track, trackCardDivEl) => {
-  let trackButtonEl = document.createElement("button");
-  let trackInfoDiv = document.createElement("div");
-  trackButtonEl.addEventListener("click", () => {
-    fetchTrackInfo(track, trackInfoDiv);
-  });
-  trackButtonEl.className = "list-group-item list-group-item-action";
-  trackButtonEl.innerText = track.title;
-  trackCardDivEl.append(trackButtonEl);
-  trackButtonEl.append(trackInfoDiv);
+const createTracks = (track, trackCollapseEl) => {
+  trackCollapseEl.className = "collapsible popout";
+  let trackEl = document.createElement("li");
+  let trackHeaderEl = document.createElement("div");
+  trackHeaderEl.className = "collapsible-header";
+  trackHeaderEl.innerText = track.title;
+  let trackBodyEl = document.createElement("div");
+  trackBodyEl.className = "collapsible-body";
+  trackCollapseEl.append(trackEl);
+  trackEl.append(trackHeaderEl, trackBodyEl);
+  fetchTrackInfo(track, trackBodyEl);
 };
 
-const fetchTrackInfo = (track, trackInfoDiv) => {
-  fetch(
+const fetchTrackInfo = (track, trackBodyEl) => {
+  return fetch(
     `https://deezerdevs-deezer.p.rapidapi.com/track/${track.deezer_track_id}`,
     {
       method: "GET",
@@ -187,16 +176,14 @@ const fetchTrackInfo = (track, trackInfoDiv) => {
   )
     .then(response => response.json())
     .then(trackInfo => {
-      renderTrackInfo(trackInfo, trackInfoDiv);
+      renderTrackInfo(trackInfo, trackBodyEl);
     })
     .catch(err => {
       console.log(err);
     });
 };
 
-const renderTrackInfo = (track, trackInfoDiv) => {
-  trackInfoDiv.innerHTML = "";
-  trackInfoDiv.setAttribute("id", track.id);
+const renderTrackInfo = (track, trackBodyEl) => {
   let trackTitleEl = document.createElement("h1");
   trackTitleEl.innerText = track.title;
   let trackArtistEl = document.createElement("h2");
@@ -205,12 +192,13 @@ const renderTrackInfo = (track, trackInfoDiv) => {
   trackAlbumEl.innerText = track.album.title;
   let trackAlbumImageEl = document.createElement("img");
   trackAlbumImageEl.src = track.album.cover_medium;
-  trackInfoDiv.append(
+  trackBodyEl.append(
     trackTitleEl,
     trackArtistEl,
     trackAlbumEl,
     trackAlbumImageEl
   );
+  addEffects();
 };
 
 const getUsername = username => {
