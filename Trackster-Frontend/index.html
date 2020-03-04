@@ -9,6 +9,12 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+
     />
 
     <!-- Compiled and minified JavaScript -->
@@ -26,6 +32,11 @@
     <script type="text/javascript" src="./src/index.js" defer></script>
   </head>
   <body>
+    <!-- <a
+      class="btn-floating btn-large waves-effect waves-light red modal-trigger"
+      href="#modal1"
+      ><i class="material-icons">add</i></a
+    > -->
     <div id="searchDiv" class="searchHidden">
       <form class="search">
         <h3>Search Track</h3>
@@ -46,6 +57,10 @@
     <div class="searchToggler">
       <button id="searchToggle">Search</button>
     </div>
+    <a
+      class="btn-floating btn-medium waves-effect waves-light red modal-trigger"
+      ><i class="material-icons">add</i></a
+    >
     <div class="login">
       <form id="login">
         <h3>Login</h3>
@@ -63,5 +78,15 @@
     <div class="resultsCollapse" id="resultsCollapse">
       <ul class="collapsible" id="resultsAccordion"></ul>
     </div>
+
+    <div class="results"></div>
+    <ul class="collapsible" id="playlistCollapse"></ul>
+    <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+      defer
+    ></script>
+
   </body>
 </html>
