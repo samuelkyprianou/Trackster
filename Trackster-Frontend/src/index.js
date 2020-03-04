@@ -23,77 +23,93 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".collapsible");
+  var instances = M.Collapsible.init(elems);
+});
+
+const createModal = () => {
+  var elems = document.querySelectorAll(".modal");
+  var instances = M.Modal.init(elems);
+};
+document.addEventListener("DOMContentLoaded", function() {
+  createModal();
+});
 
 //handle results
 const renderResults = fetchedResults => {
-  const resultsDiv = document.querySelector(".results");
-  resultsDiv.innerHTML = "";
-  const resultsList = document.createElement("div");
-  resultsList.className = "accordion";
-  resultsList.id = "accordionParent";
-
-  resultsDiv.append(resultsList);
+  const resultsList = document.getElementById("resultsAccordion");
+  resultsList.innerHTML = "";
 
   fetchedResults.forEach(result => renderResult(result, resultsList));
+
+  createModal();
 };
 
 //render each result into a list
-
 const renderResult = (result, resultsList) => {
-  const resultItem = document.createElement("div");
-  resultItem.className = "card";
+  const resultItem = document.createElement("li");
 
-  const resultHeader = document.createElement("div");
-  resultHeader.className = "card-header";
-  resultHeader.id = `cons${result.id}`;
+  const itemHeader = document.createElement("div");
+  itemHeader.className = "collapsible-header";
+  const headerContent = `${result.title} - ${result.artist.name}, Album: ${result.album.title}`;
 
-  const resultTitle = document.createElement("h2");
-  resultTitle.className = "mb-0";
+  const headerIcon = document.createElement("i");
+  headerIcon.className = "material-icons";
 
-  const titleButton = document.createElement("button");
-  titleButton.className = "btn btn-link";
-  titleButton.setAttribute("type", "button");
-  titleButton.setAttribute("data-toggle", "collapse");
-  titleButton.setAttribute("data-target", `#heading${result.id}`);
-  titleButton.setAttribute("aria-expanded", "false");
-  titleButton.setAttribute("aria-controls", `heading${result.id}`);
-  titleButton.innerText = `${result.title} - ${result.artist.name}, Album: ${result.album.title}`;
+  const headerImage = document.createElement("img");
+  headerImage.className = "responsive-img circle ";
+  headerImage.src = result.album.cover_small;
 
-  resultTitle.append(titleButton);
-  resultHeader.append(resultTitle);
-  resultItem.append(resultHeader);
-  resultsList.append(resultItem);
+  itemHeader.append(headerIcon, headerImage, headerContent);
 
-  const innerCollapse = document.createElement("div");
-  innerCollapse.id = `heading${result.id}`;
-  innerCollapse.className = "collapse";
-  innerCollapse.setAttribute("aria-labelledby", `cons${result.id}`);
-  innerCollapse.setAttribute("data-parent", "#accordionParent");
+  const itemBody = document.createElement("div");
+  itemBody.className = "collapsible-body";
 
-  const cardBody = document.createElement("div");
-  cardBody.className = "card-body";
+  const bodySpan = document.createElement("span");
+
+  //modal
+  const modalDiv = document.createElement("div");
+  modalDiv.className = "modal";
+  modalDiv.id = `modal${result.id}`;
+
+  const modalContent = document.createElement("div");
+  modalContent.className = "modal-content";
+
+  const modalContentHeader = document.createElement("h4");
+  modalContentHeader.innerText = "Select playlist to add the song to";
+
+  const addToPlaylistModal = document.createElement("a");
+  addToPlaylistModal.className =
+    "waves-effect waves-light btn green modal-trigger";
+
+  addToPlaylistModal.setAttribute("href", `#modal${result.id}`);
+
+  const bodyIcon = document.createElement("i");
+  bodyIcon.className = "material-icons large";
+  bodyIcon.innerText = "playlist_add";
+  addToPlaylistModal.append(bodyIcon);
 
   const audioPreview = document.createElement("audio");
   audioPreview.setAttribute("controls", "controls");
   audioPreview.setAttribute("src", `${result.preview}`);
   audioPreview.setAttribute("type", "audio/mpeg");
-  cardBody.append(audioPreview);
 
-  const addToPlaylist = document.createElement("img");
-  addToPlaylist.className = "playlistIcon";
-  addToPlaylist.src = "images/addToPlaylist.png";
+  const modalFooter = document.createElement("div");
+  modalFooter.className = "modal-footer";
 
-  cardBody.append(audioPreview);
-  cardBody.append(addToPlaylist);
-  innerCollapse.append(cardBody);
+  bodySpan.append(audioPreview, addToPlaylistModal);
+  modalContent.append(modalContentHeader);
+  modalDiv.append(modalContent);
+  modalDiv.append(modalFooter);
+  bodySpan.append(modalDiv);
+  itemBody.append(bodySpan);
 
-  resultsList.append(innerCollapse);
+  resultItem.append(itemHeader, itemBody);
+  resultsList.append(resultItem);
 };
 
 //search
-
-
-
 const searchResult = value => {
   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`, {
     method: "GET",
@@ -111,7 +127,7 @@ const searchResult = value => {
     });
 };
 
-//login form
+// login form
 const loginForm = document.getElementById("login");
 loginForm.addEventListener("submit", e => {
   e.preventDefault();
@@ -123,95 +139,6 @@ loginForm.addEventListener("submit", e => {
     }
   });
 });
-
-const iteratePlaylists = user =>
-  user.data.playlist.forEach(playlist => showPlaylist(playlist));
-
-const showPlaylist = playlist => {
-  playlistCollapseEl.innerText = "";
-  let cardEl = document.createElement("div");
-  cardEl.className = "card";
-  let cardHeaderEl = document.createElement("div");
-  cardHeaderEl.className = "card-header";
-  cardHeaderEl.setAttribute("id", playlist.id);
-  let h2El = document.createElement("h2");
-  h2El.className = "mb-0";
-  let buttonEl = document.createElement("button");
-  buttonEl.className = "btn btn-link";
-  buttonEl.type = "button";
-  buttonEl.setAttribute("data-toggle", "collapse");
-  buttonEl.setAttribute("data-target", `#${playlist.name}`);
-  buttonEl.setAttribute("aria-expanded", "false");
-  buttonEl.setAttribute("aria-controls", playlist.name);
-  buttonEl.innerText = playlist.name;
-  let trackDivEl = document.createElement("div");
-  trackDivEl.setAttribute("id", playlist.name);
-  trackDivEl.className = "collapse";
-  trackDivEl.setAttribute("aria-labelledby", playlist.name);
-  trackDivEl.setAttribute("data-parent", "#playlistCollapse");
-  let trackCardEl = document.createElement("div");
-  trackCardEl.className = "card-body";
-  playlistCollapseEl.append(cardEl);
-  cardEl.append(cardHeaderEl, trackDivEl);
-  cardHeaderEl.append(h2El);
-  h2El.append(buttonEl);
-  trackDivEl.append(trackCardEl);
-  let trackCardDivEl = document.createElement("div");
-  trackCardDivEl.className = "list-group";
-  trackCardEl.append(trackCardDivEl);
-  playlist.tracks.forEach(track => createTracks(track, trackCardDivEl));
-};
-
-const createTracks = (track, trackCardDivEl) => {
-  let trackButtonEl = document.createElement("button");
-  let trackInfoDiv = document.createElement("div");
-  trackButtonEl.addEventListener("click", () => {
-    fetchTrackInfo(track, trackInfoDiv);
-  });
-  trackButtonEl.className = "list-group-item list-group-item-action";
-  trackButtonEl.innerText = track.title;
-  trackCardDivEl.append(trackButtonEl);
-  trackButtonEl.append(trackInfoDiv);
-};
-
-const fetchTrackInfo = (track, trackInfoDiv) => {
-  fetch(
-    `https://deezerdevs-deezer.p.rapidapi.com/track/${track.deezer_track_id}`,
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-        "x-rapidapi-key": "d0e26413acmsh8b0c66313f1ff6cp14b3c7jsn84dd8c7ba916"
-      }
-    }
-  )
-    .then(response => response.json())
-    .then(trackInfo => {
-      renderTrackInfo(trackInfo, trackInfoDiv);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-};
-
-const renderTrackInfo = (track, trackInfoDiv) => {
-  trackInfoDiv.innerHTML = "";
-  trackInfoDiv.setAttribute("id", track.id);
-  let trackTitleEl = document.createElement("h1");
-  trackTitleEl.innerText = track.title;
-  let trackArtistEl = document.createElement("h2");
-  trackArtistEl.innerText = track.artist.name;
-  let trackAlbumEl = document.createElement("h2");
-  trackAlbumEl.innerText = track.album.title;
-  let trackAlbumImageEl = document.createElement("img");
-  trackAlbumImageEl.src = track.album.cover_medium;
-  trackInfoDiv.append(
-    trackTitleEl,
-    trackArtistEl,
-    trackAlbumEl,
-    trackAlbumImageEl
-  );
-};
 
 const getUsername = username => {
   return fetch(`http://localhost:3000/users/${username}`, {
