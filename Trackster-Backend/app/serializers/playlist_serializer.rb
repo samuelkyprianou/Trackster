@@ -3,7 +3,7 @@ class PlaylistSerializer < ActiveModel::Serializer
   
     def data
       {
-        playlist: object.id,
+        id: object.id,
         name: object.name,
         tracks: object.tracks
       }
