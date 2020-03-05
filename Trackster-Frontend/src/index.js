@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
 const renderResults = fetchedResults => {
   const resultsList = document.getElementById("resultsAccordion");
   resultsList.innerHTML = "";
+  const searchHeader = document.createElement("h2");
+  searchHeader.innerText = "Search results";
+  resultsList.append(searchHeader);
 
   fetchedResults.forEach(result => renderResult(result, resultsList));
 
@@ -168,7 +171,7 @@ const renderResult = (result, resultsList) => {
   addToPlaylistModal.setAttribute("href", `#modal${result.id}`);
 
   const bodyIcon = document.createElement("i");
-  bodyIcon.className = "material-icons large";
+  bodyIcon.className = "large material-icons ";
   bodyIcon.innerText = "playlist_add";
   addToPlaylistModal.append(bodyIcon);
 
@@ -329,11 +332,13 @@ const fetchTrackInfo = (track, trackBodyEl) => {
 };
 
 const renderTrackInfo = (track, trackBodyEl) => {
+
   let trackAudioEl = document.createElement("audio");
   trackAudioEl.setAttribute("controls", "controls");
   trackAudioEl.src = track.preview;
   trackAudioEl.setAttribute("type", "audio/mpeg");
   let trackTitleEl = document.createElement("h2");
+
   trackTitleEl.innerText = track.title;
   let trackArtistEl = document.createElement("h4");
   trackArtistEl.innerText = track.artist.name;

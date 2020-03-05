@@ -1,113 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
     <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="./src/index.js" defer></script>
-  </head>
-  <body>
-    <!-- <a
-      class="btn-floating btn-large waves-effect waves-light red modal-trigger"
-      href="#modal1"
-      ><i class="material-icons">add</i></a
-    > -->
+</head>
 
+<body>
     <nav>
-      <div class="nav-wrapper #1a237e indigo darken-4">
-        <form class="search">
-          <div class="input-field">
-            <input
-            id="search"
-            type="search"
-            name="name"
-            value=""
-            placeholder="Enter artist/album/track name"
-          />
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-            
-          </div>
-        </form>
-      </div>
+        <div class="nav-wrapper #66bb6a green ">
+            <form class="search">
+                <div class="input-field">
+                    <input id="search" type="search" name="name" value="" placeholder="Enter artist/album/track name" />
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+
+                </div>
+            </form>
+        </div>
     </nav>
 
-    
-    <div class="login">
-      <form id="login">
-        <h3>Login</h3>
-        <input
-        type="text"
-        name="username"
-        value=""
-        placeholder="Enter your username"
-        class="input-text"
-        />
-        <br />
-        <input type="submit" name="login" value="Login" class="submit" />
-      </form>
-    </div>
-    <div class="resultsCollapse" id="resultsCollapse">
-      <ul class="collapsible" id="resultsAccordion"></ul>
-    </div>
-    
-    <div class="results"></div>
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <form id="createplaylist">
-          <h3>Create Playlist</h3>
-          
-          <input
-          type="text"
-          name="name"
-          value=""
-          placeholder="Enter Playlist Name"
-          class="input-text"
-          />
-          
+    <div class="container">
+        <div class="login">
+            <form id="login">
+                <h3>Login</h3>
+                <input type="text" name="username" value="" placeholder="Enter your username" class="input-text" />
+                <br />
+                <input type="submit" name="login" value="Login" class="submit" />
+            </form>
         </div>
-        <div class="modal-footer">
-          <button type="submit" name="login" value="Login" class="modal-close waves-effect green btn-flat">submit</button>
-        </form>
-      </div>
+
+        <!-- search results -->
+        <div class="row">
+            <div class="col s6">
+                <div class="resultsCollapse" id="resultsCollapse">
+                    <ul class="collapsible" id="resultsAccordion">
+                      <h2>Search results</h2>
+                    </ul>
+                </div>
+            </div>
+
+            
+
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <form id="createplaylist">
+                        <h3>Create Playlist</h3>
+
+                        <input type="text" name="name" value="" placeholder="Enter Playlist Name" class="input-text" />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="login" value="Login" class="modal-close waves-effect green btn-flat">submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="results">
+                    <div class="playlistCollapse">
+                        <ul class="collapsible" id="playlistCollapse">
+                          <h2>Playlists</h2>
+                          <a class="waves-effect waves-circle waves-light btn-floating modal-trigger red" href="#modal1"><i class="material-icons">add</i></a>
+                        </ul>
+                        <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="playlistCollapse"><h2>Playlists</h2>
-      <ul class="collapsible" id="playlistCollapse">
-        <a
-          class="waves-effect waves-circle waves-light btn-floating modal-trigger red right"
-          href="#modal1"
-          ><i class="material-icons">add</i></a
-        >
-        
-      </ul>
-      <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
-      defer
-    ></script>
-  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+</body>
+
 </html>
