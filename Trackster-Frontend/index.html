@@ -73,35 +73,37 @@
     <div class="resultsCollapse" id="resultsCollapse">
       <ul class="collapsible" id="resultsAccordion"></ul>
     </div>
-    <a
-      class="waves-effect waves-circle waves-light btn-floating modal-trigger red"
-      href="#modal1"
-      ><i class="material-icons">add</i></a
-    >
+    
+    <div class="results"></div>
     <div id="modal1" class="modal">
       <div class="modal-content">
         <form id="createplaylist">
           <h3>Create Playlist</h3>
-
+          
           <input
-            type="text"
-            name="name"
-            value=""
-            placeholder="Enter Playlist Name"
-            class="input-text"
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter Playlist Name"
+          class="input-text"
           />
-
+          
         </div>
         <div class="modal-footer">
           <button type="submit" name="login" value="Login" class="modal-close waves-effect green btn-flat">submit</button>
         </form>
       </div>
     </div>
-
-    <div class="results"></div>
-    <div class="playlistCollapse">
-    <ul class="collapsible" id="playlistCollapse">Playlists</ul>
-    <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
+    <div class="playlistCollapse"><h2>Playlists</h2>
+      <ul class="collapsible" id="playlistCollapse">
+        <a
+          class="waves-effect waves-circle waves-light btn-floating modal-trigger red right"
+          href="#modal1"
+          ><i class="material-icons">add</i></a
+        >
+        
+      </ul>
+      <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
