@@ -1,47 +1,14 @@
 body {
   padding: 0;
 }
-.searchHidden {
-  display: none;
-}
-
-.searchShow {
-  display: block;
-}
 
 audio {
   display: row;
   margin: 0 auto;
 }
-.playlistIcon {
-  display: row;
-  margin-bottom: 40px;
-  width: 50px;
-  height: 50px;
-}
-
-.results {
-  width: 40%;
-  display: flex;
-  float: left;
-}
-#playlistCollapse {
-  float: left;
-  width: 50%;
-}
-#resultsCollapse {
-  float: left;
-  width: 40%;
-  justify-content: left;
-}
-.results {
-  float: left;
-  justify-content: left;
-}
 
 .collapsible-header {
-  display: block;
-  flex-wrap: wrap-reverse;
+  background-color: #66bb6a;
 }
 
 audio {
@@ -50,4 +17,25 @@ audio {
 
 .modal {
   height: 50%;
+}
+
+body {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  border: black;
+}
+
+#playlistCollapse {
+  background-color: white;
+  text-align: center;
+}
+
+.collapsible {
+  overflow: hideen;
+}
+h2 {
+  text-align: center;
 }
