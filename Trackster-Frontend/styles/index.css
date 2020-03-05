@@ -51,3 +51,7 @@ audio {
 .modal {
   height: 50%;
 }
+
+.duration {
+  float: right;
+}

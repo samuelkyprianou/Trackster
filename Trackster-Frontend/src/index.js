@@ -1,4 +1,5 @@
 let currentUser = null;
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 const formEl = document.querySelector("form");
 formEl.addEventListener("submit", e => {
@@ -237,8 +238,12 @@ const postPlaylist = playlistObj => {
     body: JSON.stringify(playlistObj)
   })
     .then(res => res.json())
-    .then(playlist => {
-      showPlaylist(playlist);
+    .then(playlistObj => {
+      currentUser.data.playlist = [
+        ...currentUser.data.playlist,
+        playlistObj.data
+      ];
+      showPlaylist(playlistObj.data);
     });
 };
 
@@ -265,29 +270,41 @@ const showPlaylist = playlist => {
   trackCollapseEl.id = `playlist${playlist.id}`;
   let playlistEl = document.createElement("li");
   let playlistHeaderEl = document.createElement("div");
-  playlistHeaderEl.className = "collapsible-header";
+  playlistHeaderEl.className = "collapsible-header card-panel hoverable";
   playlistHeaderEl.innerText = playlist.name;
+  let durationSpanEl = document.createElement("span");
+  durationSpanEl.setAttribute("style", "float:right");
+  let durationTotal = playlist.tracks.map(track => track.duration);
+  durationTotal.length
+    ? (durationSpanEl.innerText =
+        "Duration: " + (durationTotal.reduce(reducer) / 60).toFixed(2))
+    : (durationSpanEl.innerText = "Playlist Empty");
   let playlistIconEl = document.createElement("i");
   playlistIconEl.className = "material-icons";
   let playlistBodyEl = document.createElement("div");
   playlistBodyEl.className = "collapsible-body";
   playlistCollapseEl.append(playlistEl);
   playlistEl.append(playlistHeaderEl, playlistBodyEl);
-  playlistHeaderEl.append(playlistIconEl);
+  playlistHeaderEl.append(playlistIconEl, durationSpanEl);
   playlistBodyEl.append(trackCollapseEl);
   playlist.tracks.forEach(track => createTracks(track, trackCollapseEl));
 };
 
 const createTracks = (track, trackCollapseEl) => {
   trackCollapseEl.className = "collapsible popout";
+  let trackPicEl = document.createElement("img");
+  trackPicEl.className = "responsive-img circle";
+  trackPicEl.src = track.cover_small;
   let trackEl = document.createElement("li");
   let trackHeaderEl = document.createElement("div");
   trackHeaderEl.className = "collapsible-header";
-  trackHeaderEl.innerText = track.title;
+  let h3TitleEl = document.createElement("h7");
+  h3TitleEl.innerText = track.title;
   let trackBodyEl = document.createElement("div");
   trackBodyEl.className = "collapsible-body";
   trackCollapseEl.append(trackEl);
   trackEl.append(trackHeaderEl, trackBodyEl);
+  trackHeaderEl.append(h3TitleEl, trackPicEl);
   fetchTrackInfo(track, trackBodyEl);
 };
 
@@ -312,19 +329,25 @@ const fetchTrackInfo = (track, trackBodyEl) => {
 };
 
 const renderTrackInfo = (track, trackBodyEl) => {
-  let trackTitleEl = document.createElement("h1");
+  let trackAudioEl = document.createElement("audio");
+  trackAudioEl.setAttribute("controls", "controls");
+  trackAudioEl.src = track.preview;
+  trackAudioEl.setAttribute("type", "audio/mpeg");
+  let trackTitleEl = document.createElement("h2");
   trackTitleEl.innerText = track.title;
-  let trackArtistEl = document.createElement("h2");
+  let trackArtistEl = document.createElement("h4");
   trackArtistEl.innerText = track.artist.name;
-  let trackAlbumEl = document.createElement("h2");
+  let trackAlbumEl = document.createElement("h4");
   trackAlbumEl.innerText = track.album.title;
   let trackAlbumImageEl = document.createElement("img");
   trackAlbumImageEl.src = track.album.cover_medium;
+  trackAlbumImageEl.setAttribute("style", "float:right");
   trackBodyEl.append(
+    trackAlbumImageEl,
     trackTitleEl,
     trackArtistEl,
     trackAlbumEl,
-    trackAlbumImageEl
+    trackAudioEl
   );
   addEffects();
 };
