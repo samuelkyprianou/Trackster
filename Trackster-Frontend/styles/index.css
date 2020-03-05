@@ -24,8 +24,39 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   border: black;
+  max-height: 600px;
+  float: left;
+  overflow: auto;
+}
+
+.searchtitle {
+  width: 45%;
+  border: black;
+  float: left;
+  position: relative;
+  top: 30px;
+  left: 30px;
+  text-align: center;
+}
+
+.playlisttitle {
+  width: 45%;
+  border: black;
+  float: right;
+  position: relative;
+  top: 30px;
+  right: 30px;
+  text-align: center;
+}
+
+.playlistcontainer {
+  width: 100%;
+  border: black;
+  max-height: 600px;
+  float: right;
+  overflow: auto;
 }
 
 #playlistCollapse {
@@ -34,11 +65,8 @@ body {
 }
 
 .collapsible {
-  overflow: hideen;
+  overflow: hiden;
 }
 h2 {
   text-align: center;
-
-.duration {
-  float: right;
 }

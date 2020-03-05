@@ -45,7 +45,6 @@ const renderResults = fetchedResults => {
   const resultsList = document.getElementById("resultsAccordion");
   resultsList.innerHTML = "";
   const searchHeader = document.createElement("h2");
-  searchHeader.innerText = "Search results";
   resultsList.append(searchHeader);
 
   fetchedResults.forEach(result => renderResult(result, resultsList));
@@ -61,7 +60,7 @@ const renderResult = (result, resultsList) => {
   const resultItem = document.createElement("li");
 
   const itemHeader = document.createElement("div");
-  itemHeader.className = "collapsible-header";
+  itemHeader.className = "collapsible-header card-panel hoverable";
   const headerContent = `${result.title} - ${result.artist.name}, Album: ${result.album.title}`;
 
   const headerIcon = document.createElement("i");
@@ -332,7 +331,6 @@ const fetchTrackInfo = (track, trackBodyEl) => {
 };
 
 const renderTrackInfo = (track, trackBodyEl) => {
-
   let trackAudioEl = document.createElement("audio");
   trackAudioEl.setAttribute("controls", "controls");
   trackAudioEl.src = track.preview;
