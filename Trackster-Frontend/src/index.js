@@ -6,22 +6,6 @@ formEl.addEventListener("submit", e => {
   searchResult(e.target.elements.name.value);
 });
 
-//show/hide search
-let searchShow = false;
-
-document.addEventListener("DOMContentLoaded", () => {
-  const searchToggle = document.getElementById("searchToggle");
-  const searchDiv = document.getElementById("searchDiv");
-  searchToggle.addEventListener("click", () => {
-    searchShow = !searchShow;
-    if (searchShow) {
-      searchDiv.className = "searchShow";
-    } else {
-      searchDiv.className = "searchHidden";
-    }
-  });
-});
-
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".collapsible");
   var instances = M.Collapsible.init(elems, {
@@ -45,6 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
   addEffects();
 });
 
+//modal select initialize
+
+const addModalSelect = () => {
+  var elems = document.querySelectorAll("select");
+  var instances = M.FormSelect.init(elems);
+};
+document.addEventListener("DOMContentLoaded", function() {
+  addModalSelect();
+});
+
 //handle results
 const renderResults = fetchedResults => {
   const resultsList = document.getElementById("resultsAccordion");
@@ -53,7 +47,10 @@ const renderResults = fetchedResults => {
   fetchedResults.forEach(result => renderResult(result, resultsList));
 
   createModal();
+  addModalSelect();
 };
+
+//post track to playlist
 
 //render each result into a list
 const renderResult = (result, resultsList) => {
@@ -78,6 +75,57 @@ const renderResult = (result, resultsList) => {
   const bodySpan = document.createElement("span");
 
   //modal
+
+  const modalForm = document.createElement("form");
+  modalForm.id = "playlistSelect";
+  modalForm.addEventListener("submit", e => {
+    const playlistId = modalSelect.options[modalSelect.selectedIndex].value;
+    e.preventDefault();
+    postTrack(
+      {
+        title: result.title,
+        duration: result.duration,
+        artist: result.artist.name,
+        cover_small: result.album.cover_small,
+        album_title: result.album.title,
+        preview: result.preview,
+        deezer_track_id: result.id,
+        deezer_album_id: result.album.id,
+        deezer_artist_id: result.artist.id
+      },
+      playlistId
+    );
+    console.log(playlistId);
+  });
+
+  const postTrack = (trackObj, playlistId) => {
+    fetch("http://localhost:3000/tracks", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(trackObj)
+    })
+      .then(resp => resp.json())
+      .then(track => postTrackToTrackPlaylist(track, playlistId));
+  };
+
+  const postTrackToTrackPlaylist = (track, playlistId) => {
+    fetch("http://localhost:3000/track_playlists", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ track_id: track.id, playlist_id: playlistId })
+    })
+      .then(resp => resp.json())
+      .then(playlistObj => {
+        const tracksEl = document.getElementById(`playlist${playlistId}`);
+        createTracks(track, tracksEl);
+      });
+  };
   const modalDiv = document.createElement("div");
   modalDiv.className = "modal";
   modalDiv.id = `modal${result.id}`;
@@ -86,7 +134,31 @@ const renderResult = (result, resultsList) => {
   modalContent.className = "modal-content";
 
   const modalContentHeader = document.createElement("h4");
-  modalContentHeader.innerText = "Select playlist to add the song to";
+  modalContentHeader.innerText = "Select the playlist";
+
+  //select
+  const modalSelectDiv = document.createElement("div");
+  modalSelectDiv.className = "input-field col s12";
+
+  const renderPlaylist = playlist => {
+    const playlistOption = document.createElement("option");
+    playlistOption.setAttribute("value", playlist.id);
+    playlistOption.innerText = playlist.name;
+
+    modalSelect.append(playlistOption);
+  };
+
+  const modalSelect = document.createElement("select");
+  modalSelect.id = "playlistDropdown";
+  const firstOption = document.createElement("option");
+  firstOption.setAttribute("selected", "true");
+  firstOption.setAttribute("disabled", "disabled");
+  firstOption.innerText = "Choose playlist";
+  modalSelect.append(firstOption);
+
+  currentUser.data.playlist.forEach(playlist => renderPlaylist(playlist));
+
+  modalSelectDiv.append(modalSelect);
 
   const addToPlaylistModal = document.createElement("a");
   addToPlaylistModal.className =
@@ -107,10 +179,17 @@ const renderResult = (result, resultsList) => {
   const modalFooter = document.createElement("div");
   modalFooter.className = "modal-footer";
 
+  const footerSave = document.createElement("button");
+  footerSave.innerText = "Save";
+  footerSave.setAttribute("type", "submit");
+  footerSave.className = "modal-close waves-effect green btn-flat";
+
+  modalFooter.append(footerSave);
   bodySpan.append(audioPreview, addToPlaylistModal);
-  modalContent.append(modalContentHeader);
-  modalDiv.append(modalContent);
-  modalDiv.append(modalFooter);
+  modalForm.append(modalSelectDiv, modalContent, modalFooter);
+  modalContent.append(modalContentHeader, modalSelectDiv);
+  modalDiv.append(modalForm);
+
   bodySpan.append(modalDiv);
   itemBody.append(bodySpan);
 
@@ -183,6 +262,7 @@ let playlistCollapseEl = document.getElementById("playlistCollapse");
 
 const showPlaylist = playlist => {
   let trackCollapseEl = document.createElement("ul");
+  trackCollapseEl.id = `playlist${playlist.id}`;
   let playlistEl = document.createElement("li");
   let playlistHeaderEl = document.createElement("div");
   playlistHeaderEl.className = "collapsible-header";

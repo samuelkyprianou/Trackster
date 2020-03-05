@@ -1,3 +1,6 @@
+body {
+  padding: 0;
+}
 .searchHidden {
   display: none;
 }
@@ -18,7 +21,33 @@ audio {
 }
 
 .results {
-  width: 50%;
+  width: 40%;
   display: flex;
   float: left;
+}
+#playlistCollapse {
+  float: left;
+  width: 50%;
+}
+#resultsCollapse {
+  float: left;
+  width: 40%;
+  justify-content: left;
+}
+.results {
+  float: left;
+  justify-content: left;
+}
+
+.collapsible-header {
+  display: block;
+  flex-wrap: wrap-reverse;
+}
+
+audio {
+  width: 80%;
+}
+
+.modal {
+  height: 50%;
 }
