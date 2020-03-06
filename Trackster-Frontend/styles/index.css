@@ -26,7 +26,7 @@ body {
 .container {
   width: 100%;
   border: black;
-  max-height: 600px;
+  max-height: 800px;
   float: left;
   overflow: auto;
 }
@@ -54,7 +54,7 @@ body {
 .playlistcontainer {
   width: 100%;
   border: black;
-  max-height: 600px;
+  max-height: 800px;
   float: right;
   overflow: auto;
 }
@@ -65,8 +65,17 @@ body {
 }
 
 .collapsible {
-  overflow: hiden;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
 }
 h2 {
   text-align: center;
+}
+
+.rounded {
+  background-color: #66bb6a;
+  border: 1px;
+  border-color: black;
 }
