@@ -5,6 +5,7 @@ const formEl = document.querySelector("form");
 formEl.addEventListener("submit", e => {
   e.preventDefault();
   searchResult(e.target.elements.name.value);
+  e.reset();
 });
 
 const speechSearch = result => {
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //handle results
 const renderResults = fetchedResults => {
   const resultsList = document.getElementById("resultsAccordion");
+  resultsList.innerHTML = "";
 
   fetchedResults.forEach(result => renderResult(result, resultsList));
 

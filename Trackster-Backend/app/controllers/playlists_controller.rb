@@ -13,6 +13,9 @@ class PlaylistsController < ApplicationController
         render json: playlist   
     end
 
+    def delete
+    end
+
     private
     def playlist_params
         params.require(:playlist).permit(:name, :user_id)

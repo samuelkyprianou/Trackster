@@ -24,10 +24,11 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
 .container {
   width: 100%;
   border: black;
-  max-height: 600px;
+  max-height: 500px;
   float: left;
   overflow: auto;
 }
@@ -55,7 +56,7 @@ body {
 .playlistcontainer {
   width: 100%;
   border: black;
-  max-height: 600px;
+  max-height: 500px;
   float: right;
   overflow: auto;
 }
@@ -112,4 +113,11 @@ h2 {
 }
 #resultmodal {
   float: right;
+}
+#logo {
+  height: 150px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
