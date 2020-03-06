@@ -74,6 +74,7 @@ const renderResult = (result, resultsList) => {
 
   const itemBody = document.createElement("div");
   itemBody.className = "collapsible-body";
+  itemBody.setAttribute("id", "resultcard")
 
   const bodySpan = document.createElement("span");
 
@@ -171,14 +172,16 @@ const renderResult = (result, resultsList) => {
   addToPlaylistModal.setAttribute("href", `#modal${result.id}`);
 
   const bodyIcon = document.createElement("i");
-  bodyIcon.className = "large material-icons ";
+  bodyIcon.className = "large material-icons";
   bodyIcon.innerText = "playlist_add";
   addToPlaylistModal.append(bodyIcon);
+  bodyIcon.setAttribute("id", "resultmodal")
 
   const audioPreview = document.createElement("audio");
   audioPreview.setAttribute("controls", "controls");
   audioPreview.setAttribute("src", `${result.preview}`);
   audioPreview.setAttribute("type", "audio/mpeg");
+  audioPreview.setAttribute("id", "resultaudio");
 
   const modalFooter = document.createElement("div");
   modalFooter.className = "modal-footer";
@@ -276,7 +279,7 @@ const showPlaylist = playlist => {
   playlistHeaderEl.className = "collapsible-header card-panel hoverable";
   playlistHeaderEl.innerText = playlist.name;
   let durationSpanEl = document.createElement("span");
-  durationSpanEl.setAttribute("style", "float:right");
+  durationSpanEl.setAttribute("id", "duration");
   let durationTotal = playlist.tracks.map(track => track.duration);
   durationTotal.length
     ? (durationSpanEl.innerText =
@@ -305,6 +308,7 @@ const createTracks = (track, trackCollapseEl) => {
   h3TitleEl.innerText = track.title;
   let trackBodyEl = document.createElement("div");
   trackBodyEl.className = "collapsible-body";
+  trackBodyEl.setAttribute("id", "trackcard");
   trackCollapseEl.append(trackEl);
   trackEl.append(trackHeaderEl, trackBodyEl);
   trackHeaderEl.append(trackPicEl, h3TitleEl);

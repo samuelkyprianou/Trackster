@@ -8,7 +8,7 @@ audio {
 }
 
 .collapsible-header {
-  background-color: #66bb6a;
+  background-color: #5fba54;
 }
 
 audio {
@@ -21,12 +21,19 @@ audio {
 
 body {
   width: 100%;
+  background: url(https://www.jakpost.travel/wimages/large/38-385124_abstract-guitar-picture-coolpad-35031-back-cover.jpg)
+    no-repeat;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
 .container {
   width: 100%;
   border: black;
-  max-height: 800px;
+  max-height: 500px;
   float: left;
   overflow: auto;
 }
@@ -54,14 +61,16 @@ body {
 .playlistcontainer {
   width: 100%;
   border: black;
-  max-height: 800px;
+  max-height: 500px;
   float: right;
   overflow: auto;
 }
 
 #playlistCollapse {
-  background-color: white;
-  text-align: center;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
 }
 
 .collapsible {
@@ -72,10 +81,39 @@ body {
 }
 h2 {
   text-align: center;
+  font-family: "Odibee Sans", cursive;
+  color: blueviolet;
 }
 
 .rounded {
-  background-color: #66bb6a;
+  background-color: #5fba54;
   border: 1px;
   border-color: black;
+}
+
+.collapsible-header {
+  position: relative;
+  border: none;
+}
+
+#duration {
+  position: absolute;
+  right: 2rem;
+}
+#trackcard {
+  background-image: linear-gradient(to top right, #5fba54, rgb(0, 0, 0));
+  border: none;
+}
+
+#resultcard {
+  border: none;
+  position: relative;
+}
+
+#resultaudio {
+  float: left;
+}
+
+#resultmodal {
+  float: right;
 }
