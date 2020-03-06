@@ -24,11 +24,12 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper #66bb6a green ">
-            <form class="search">
-                <div class="input-field">
-                    <input id="search" type="search" name="name" value="" placeholder="Enter artist/album/track name" />
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+      <div class="nav-wrapper #66bb6a green ">
+        <form class="search">
+          <div class="input-field">
+            <input id="search" type="search" name="name" value="" placeholder="Enter artist/album/track name" />
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            
                     <i class="material-icons">close</i>
 
                 </div>
@@ -49,13 +50,14 @@
     <!-- <div class="row"> -->
       <div class="searchtitle">
 
-        <h2>Search results</h2>
+        <h2>Search Results</h2>
         <div class="container">
-          <div class="col s6">
             <div class="resultsCollapse" id="resultsCollapse">
+              <button id="btnGiveCommand" class="btn-floating">
+                <i class="material-icons">keyboard_voice</i>
+              </button>
               <ul class="collapsible" id="resultsAccordion">
               </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -76,22 +78,59 @@
               </form>
             </div>
           </div>
-          <div class="col s6">
             <div class="results">
               <div class="playlistCollapse">
+                <a class="waves-effect waves-circle waves-light btn-floating modal-trigger red" href="#modal1"><i class="material-icons">add</i></a>
                 <ul class="collapsible" id="playlistCollapse">
-                  <a class="waves-effect waves-circle waves-light btn-floating modal-trigger red" href="#modal1"><i class="material-icons">add</i></a>
                 </ul>
                 <!-- <ul class="collapsible popout" id="trackCollapse"></ul> -->
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
 
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <script>
+       
+var message = document.querySelector("#search");
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+
+var grammar = "#JSGF V1.0;";
+
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+recognition.lang = "en-US";
+recognition.interimResults = false;
+
+recognition.onresult = function(event) {
+  var last = event.results.length - 1;
+  var command = event.results[last][0].transcript;
+  message.value = command;
+  speechSearch(message.value);
+};
+recognition.onspeechend = function() {
+  recognition.stop();
+};
+
+recognition.onerror = function(event) {
+  message.textContent = "Error occurred in recognition: " + event.error;
+};
+
+document
+  .querySelector("#btnGiveCommand")
+  .addEventListener("click", function() {
+    recognition.start();
+  });
+
+
+
+    </script>
 </body>
 
 </html>

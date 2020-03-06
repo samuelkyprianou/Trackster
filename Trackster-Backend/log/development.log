@@ -5062,3 +5062,954 @@ Processing by UsersController#show as */*
 Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 2.6ms | Allocations: 31598)
 
 
+Started GET "/users/Jeff" for ::1 at 2020-03-06 11:43:17 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (1.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (75.01ms)
+Completed 200 OK in 95ms (Views: 76.3ms | ActiveRecord: 6.8ms | Allocations: 55433)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:30:19 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (2.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (83.07ms)
+Completed 200 OK in 86ms (Views: 78.7ms | ActiveRecord: 5.5ms | Allocations: 31671)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:34:41 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.15ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 2.2ms | Allocations: 31616)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:35:19 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (48.13ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 2.6ms | Allocations: 31619)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:46:43 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (1.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (37.46ms)
+Completed 200 OK in 40ms (Views: 33.2ms | ActiveRecord: 5.1ms | Allocations: 31656)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:47:54 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (34.65ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 2.4ms | Allocations: 31598)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:50:40 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (45.71ms)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 2.8ms | Allocations: 31601)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:53:33 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.73ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 2.3ms | Allocations: 31616)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:55:13 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (43.98ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 2.5ms | Allocations: 31601)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:57:29 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.04ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 2.4ms | Allocations: 31601)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:58:15 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (44.31ms)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 2.8ms | Allocations: 31601)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 12:59:15 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.47ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 2.7ms | Allocations: 31598)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:00:21 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.17ms)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 2.8ms | Allocations: 31598)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:04:16 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (46.62ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 3.2ms | Allocations: 31599)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:05:09 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (38.05ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 2.5ms | Allocations: 31598)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:06:58 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (45.75ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 2.5ms | Allocations: 31601)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:09:52 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (39.77ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 2.7ms | Allocations: 31598)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:10:10 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (44.83ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 2.5ms | Allocations: 31601)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:11:03 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (52.84ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 3.8ms | Allocations: 31598)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:17:39 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (1.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (47.25ms)
+Completed 200 OK in 49ms (Views: 43.2ms | ActiveRecord: 4.8ms | Allocations: 31659)
+
+
+Started GET "/users/Jeff" for ::1 at 2020-03-06 13:32:01 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"Jeff"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:14:in `map'
+[active_model_serializers]   [1m[36mTrack Load (3.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers]   [1m[36mTrack Load (0.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "track_playlists" ON "tracks"."id" = "track_playlists"."track_id" WHERE "track_playlists"."playlist_id" = ?[0m  [["playlist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (56.14ms)
+Completed 200 OK in 65ms (Views: 51.8ms | ActiveRecord: 7.3ms | Allocations: 31656)
+
+

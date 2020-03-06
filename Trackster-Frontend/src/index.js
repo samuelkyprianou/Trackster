@@ -7,6 +7,11 @@ formEl.addEventListener("submit", e => {
   searchResult(e.target.elements.name.value);
 });
 
+const speechSearch = result => {
+  // e.preventDefault();
+  searchResult(result);
+};
+
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".collapsible");
   var instances = M.Collapsible.init(elems, {
@@ -43,9 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
 //handle results
 const renderResults = fetchedResults => {
   const resultsList = document.getElementById("resultsAccordion");
-  resultsList.innerHTML = "";
-  const searchHeader = document.createElement("h2");
-  resultsList.append(searchHeader);
 
   fetchedResults.forEach(result => renderResult(result, resultsList));
 
@@ -74,7 +76,7 @@ const renderResult = (result, resultsList) => {
 
   const itemBody = document.createElement("div");
   itemBody.className = "collapsible-body";
-  itemBody.setAttribute("id", "resultcard")
+  itemBody.setAttribute("id", "resultcard");
 
   const bodySpan = document.createElement("span");
 
@@ -175,7 +177,7 @@ const renderResult = (result, resultsList) => {
   bodyIcon.className = "large material-icons";
   bodyIcon.innerText = "playlist_add";
   addToPlaylistModal.append(bodyIcon);
-  bodyIcon.setAttribute("id", "resultmodal")
+  bodyIcon.setAttribute("id", "resultmodal");
 
   const audioPreview = document.createElement("audio");
   audioPreview.setAttribute("controls", "controls");
