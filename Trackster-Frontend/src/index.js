@@ -127,6 +127,7 @@ const renderResult = (result, resultsList) => {
       .then(playlistObj => {
         const tracksEl = document.getElementById(`playlist${playlistId}`);
         createTracks(track, tracksEl);
+        M.toast({ html: "Track added!", classes: "rounded" });
       });
   };
   const modalDiv = document.createElement("div");
@@ -306,7 +307,7 @@ const createTracks = (track, trackCollapseEl) => {
   trackBodyEl.className = "collapsible-body";
   trackCollapseEl.append(trackEl);
   trackEl.append(trackHeaderEl, trackBodyEl);
-  trackHeaderEl.append(h3TitleEl, trackPicEl);
+  trackHeaderEl.append(trackPicEl, h3TitleEl);
   fetchTrackInfo(track, trackBodyEl);
 };
 
